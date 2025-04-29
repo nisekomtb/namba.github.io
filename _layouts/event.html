@@ -554,35 +554,25 @@ baseCss: view-article
       </div>
 
       {% if page.storeProductId %}
-      <div class="t3-section">
+      {% comment %} <div class="t3-section">
 
         <div id="event-store"></div>
 
-      </div>
+      </div> {% endcomment %}
 
-      <script id="ecwid-script" data-cfasync="false" type="text/javascript"
-        src="https://app.ecwid.com/script.js?71386768&lang={% if page.lang == 'ja' %}ja-JP{% else %}en-GB{% endif %}&data_platform=code&data_date=2022-08-27"
-        charset="utf-8"></script>
-      <script>
+      {% comment %} <script>var ecwid_ProductBrowserURL = "/shop/";</script> {% endcomment %}
 
-        window.ec = window.ec || Object();
-        window.ec.config = window.ec.config || Object();
-        window.ec.config.custom_redirect_after_purchase = 'https://www.namba.ngo/get-involved/thanks';
-        window.ec.config.navigation_scrolling = "DISABLED";
-        window.ec.storefront = window.ec.storefront || Object();
-        window.ec.storefront.product_details_show_share_buttons = false;
-        window.ec.storefront.product_details_show_qty = true;
-        window.ec.storefront.product_details_show_in_stock_label = true;
-        window.ec.storefront.show_breadcrumbs = true;
-        window.ec.storefront.product_details_show_breadcrumbs = true;
-        window.ec.storefront.product_details_position_breadcrumbs = 25;
-        window.ec.storefront.breadcrumbs_separator = "";
 
-        xProductBrowser("defaultProductId={{ page.storeProductId }}", "categoriesPerRow=3", "views=grid(20,3) list(60) table(60)", "categoryView=grid", "searchView=list", "id=event-store");
+  <div id="my-store-71386768"></div>
+<div><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?71386768&data_platform=code&data_date=2025-04-05" charset="utf-8"></script>
+<script>
+  window.ec = window.ec || Object();
+  window.ec.config = window.ec.config || Object();
+  window.ec.config.store_main_page_url = "/shop/";
+    // Ecwid.setStorefrontBaseUrl('namba.ngo/shop/');
+</script>
 
-        window.ecwid_script_defer = true;
-        window.ecwid_dynamic_widgets = true;
-      </script>
+<div class="ecsp ecsp-SingleProduct-v2 ecsp-SingleProduct-v2-bordered ecsp-SingleProduct-v2-centered ecsp-Product ec-Product-587625550" itemscope itemtype="http://schema.org/Product" data-single-product-id="587625550"><div itemprop="image"></div><div class="ecsp-title" itemprop="name" content="NAMBA t-shirt"></div><div itemtype="http://schema.org/Offer" itemscope itemprop="offers"><div class="ecsp-productBrowser-price ecsp-price" itemprop="price" content="5000" data-spw-price-location="button"><div itemprop="priceCurrency" content="JPY"></div></div></div><div customprop="options"></div><div customprop="qty"></div><div customprop="addtobag"></div><div customprop="vatinprice"></div></div><script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?71386768&data_platform=singleproduct_v2" charset="utf-8"></script><script type="text/javascript">xProduct()</script>
       {% endif %}
 
       <!-- Footer -->
